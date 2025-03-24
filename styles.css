@@ -1,0 +1,321 @@
+body, h1, h2, h3, h4, p, button, ul, li, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Navbar */
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;  /* Większa ikona */
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar {
+    /* color: #333; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+    background-color: #f8f8f8;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #333;
+    padding: 15px 20px;
+    display: block;
+    font-size: 20px;
+}
+
+.nav-links a:hover {
+    background: #ff5a5f;
+    color: white;
+    border-radius: 5px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #f8f8f8;
+    display: none;
+    min-width: 100px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 10px;
+    display: block;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background: #444;
+    color: white;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .logo {
+    height: 70%;
+    width: 70%;
+}
+
+.navbar .allegro{
+    height: 18px;
+}
+
+.nav-icons{
+    margin-right: 60px;
+}
+
+.nav-icons span {
+    margin-left: 10px;
+    cursor: pointer;
+    margin-right: 0.01vw;
+}
+
+.fa{
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        background: #f8f8f8;
+        position: absolute;
+        top: 57px;
+        left: 0;
+        width: 100%;
+        text-align: left;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        margin-top: 30px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+    }
+
+    .dropdown a{
+        padding-left: 0;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/tlo.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 100px;
+}
+
+.hero-content {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 2.5em;
+}
+
+.btn {
+    background: #ff5a5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #e0484e;
+}
+
+/* Produkty */
+.products {
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.product {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 270px;
+}
+
+.product img {
+    width: 100%;
+    height: 400px;
+    object-fit: fill;
+    border-radius: 10px;
+}
+
+.contact-grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-info{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info .dane{
+    display: block;
+    padding: 0em 2em;
+}
+
+.contact-info .dane h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.contact-info .dane ul {
+    padding-left: 20px;
+}
+
+/* .contact-map {
+    flex: 1;
+    text-align: center;
+    border-radius: 10px;
+} */
+
+.map{
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .contact {
+        flex-direction: row;
+        text-align: center;
+    }
+
+    .contact-info{
+        flex-direction: column;
+    }
+
+    .contact-info .dane{
+        padding: 2em 0;
+    }
+
+    .contact-info,
+    .contact-map {
+        width: 100%;
+    }
+}
+
+/* .dane{
+    justify-content: center;
+    align-content: center;
+}
+
+.dane h2{
+    font-size: 16px;
+    padding: 10px 0px;
+}
+
+.dane h1{
+    font-size: 22px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+} */
+
+.mapka{
+    text-align: center;
+    height: 350px;
+}
+
+.mapka img{
+    --szerokosc: 100%;
+    width: var(--szerokosc);
+    height: var(--szerokosc);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
